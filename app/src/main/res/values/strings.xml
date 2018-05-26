@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Monu</string>
+    <string name="title">Browse Items</string>
+    <string name="caps">Enter the prize of cap(s)</string>
+    <string name="belts">Enter the prize of belt(s)</string>
+    <string name="watches">Enter the prize of watches(s)</string>
+    <string name="sunglasses">Enter the prize of goggle(s)</string>
+    <string name="phoneNo">Enter the contact number of customer</string>
+    <string name="bill">To billing</string>
+    <string name="screenshot">Save bill</string>
+    <string name="rightTags">Copyright Rahul Dubey &amp; Ayush Gupta</string>
+</resources>
