@@ -9,4 +9,5 @@
     <string name="bill">To billing</string>
     <string name="screenshot">Save bill</string>
     <string name="rightTags">Copyright Rahul Dubey &amp; Ayush Gupta</string>
+    <string name="sms">Send to customer</string>
 </resources>

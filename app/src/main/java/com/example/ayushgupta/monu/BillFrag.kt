@@ -2,6 +2,7 @@ package com.example.ayushgupta.monu
 
 import android.annotation.SuppressLint
 import android.app.Fragment
+import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -10,33 +11,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import java.io.File
 import java.io.FileOutputStream
 
 @SuppressLint("ValidFragment")
-class BillFrag : Fragment {
+class BillFrag(string: String, cost: Double, phone: String) : Fragment() {
     var et1: TextView? = null
-    var string: String? = null
-    var cost: Double? = null
-    var phone: String? = null
-
-    constructor(string: String, cost: Double, phone: String) {
-        this.string = string
-        this.cost = cost
-        this.phone = phone
-    }
+    var string: String? = string
+    private var cost: Double? = cost
+    var phone: String? = phone
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater!!.inflate(R.layout.bill_frag, container, false)
         et1 = view.findViewById(R.id.billprint)
-        val bill = "$string \n Total cost: Rs. $cost \n Customer contact: +91 $phone"
+        var bill = "$string \nTotal cost: Rs. $cost \nCustomer contact: +91 $phone"
         et1?.text = bill
         val btn = view.findViewById<Button>(R.id.btn2)
         btn.setOnClickListener {
             createBill(phone!!)
+        }
+       val btn1=view.findViewById<Button>(R.id.btn3)
+        btn1.setOnClickListener {
+            bill += "\n\nTHANKS FOR SHOPPING WITH US\n\nVISIT AGAIN"
+            val intent = Intent()
+            intent.action = Intent.ACTION_SENDTO
+            intent.data = Uri.parse("smsto:$phone")
+            intent.putExtra("sms_body",bill)
+            startActivity(intent)
         }
         return view
     }

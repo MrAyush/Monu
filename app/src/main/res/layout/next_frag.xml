@@ -67,10 +67,17 @@
             android:hint="@string/phoneNo"
             android:inputType="phone" />
 
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bill" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:background="@drawable/btn_shape"
+                android:layout_alignParentBottom="true"
+                android:text="@string/bill" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
